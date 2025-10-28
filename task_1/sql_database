@@ -1,0 +1,32 @@
+CREATE DATABASE ecommerce;
+USE ecommerce;
+
+CREATE TABLE products (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  category VARCHAR(50),
+  price DECIMAL(10,2),
+  stock INT
+);
+
+sudo mysql
+USE ecommerce;
+SELECT * FROM products;
+
+OUTPUT:
++----+------------+-------------+--------+-------+
+| id | name       | category    | price  | stock |
++----+------------+-------------+--------+-------+
+|  1 | Laptop     | Electronics | 55000  |    10 |
+|  2 | Headphones | Electronics | 1500   |    50 |
+|  3 | T-Shirt    | Fashion     | 499    |   100 |
+|  4 | Shoes      | Fashion     | 1999   |    40 |
+|  5 | Watch      | Accessories | 2599   |    20 |
++----+------------+-------------+--------+-------+
+
+
+sudo mysql
+CREATE USER 'Gopika'@'localhost' IDENTIFIED BY 'Gopi0987';
+GRANT ALL PRIVILEGES ON ecommerce.* TO 'Gopika'@'localhost';
+FLUSH PRIVILEGES;
+exit;
